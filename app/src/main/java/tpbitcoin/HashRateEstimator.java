@@ -28,8 +28,18 @@ public class HashRateEstimator {
     public double estimate(){
         byte[] bytes;
         MessageDigest md = Sha256Hash.newDigest();
-        // TODO
-        return 0.0;
+
+        double totalTime = 0.0;
+        double hashRate;
+        byte[] shaArray = new byte[256];
+        for(int index = 0; index < numberOfTries;index++){
+            double startTime = System.currentTimeMillis();
+            md.update(shaArray);
+            byte[] shaDigest = md.digest();
+            totalTime += startTime - System.currentTimeMillis();
+        }
+        hashRate = totalTime / (numberOfTries*1000);
+        return hashRate;
     }
 
 }
