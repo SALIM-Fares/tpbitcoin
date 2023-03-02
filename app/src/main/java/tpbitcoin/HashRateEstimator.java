@@ -29,7 +29,7 @@ public class HashRateEstimator {
         byte[] bytes;
         MessageDigest md = Sha256Hash.newDigest();
         double experimentTime = 0.0;
-        double totalHashes = 0;
+        int totalHashes = 0;
 
         double finalHashRate;
         byte[] shaArray = new byte[256];
@@ -43,7 +43,7 @@ public class HashRateEstimator {
             }
             experimentTime = 0.0;
         }
-        finalHashRate = totalHashes / (numberOfTries*duration);
+        finalHashRate = (double) totalHashes / (numberOfTries*duration);
         return finalHashRate;
     }
 

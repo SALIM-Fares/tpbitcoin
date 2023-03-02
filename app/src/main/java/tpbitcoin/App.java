@@ -28,13 +28,13 @@ public class App {
 
         //Q1  hashrate
         double localHashrate = new HashRateEstimator(5000,5).estimate();
-        System.out.println(localHashrate);
-        /*
+
+
         // Q2: latest  block  from mainet (bitcoin blockchain) and its predecessor
         Context context   = new Context(new UnitTestParams()); // required  for working with bitcoinj
         Explorer explorer = new Explorer(); // for interacting with blockchain.info API
         // Q3 Some TXs
-
+        /*
         // Q4 Mine a new block
         Miner miner = new Miner(context.getParams());
         // empty list of tx since creating txs, even fake ones, requires some work
